@@ -10,10 +10,10 @@ export default function DayList(props) {
                           name={element.name} 
                           spots={element.spots} 
                           selected={element.name === props.day}
-                          setDay={props.setDay}  
+                          setDay={(event)=>props.setDay(element.name)}  
                          />)
   });
-
+ 
   return (
     <ul>
       {DayListItemArray}
