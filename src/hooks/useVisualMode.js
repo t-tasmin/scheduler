@@ -1,30 +1,29 @@
 import { useState } from "react";
 
-export  function useVisualMode (modeInitial){
+export default function useVisualMode (modeInitial) {
 
-  [mode, setMode] = useState(modeInitial);
+  const [mode, setMode] = useState(modeInitial);
   const [history, setHistory] = useState([modeInitial]);
 
-  function transition(modeNew) { 
-    setMode(modeNew);
-    history.push(modeNew);     
+  function transition(modeNew, replace = false) { 
+    if (!replace) {
+      setMode(modeNew);
+      history.push(modeNew);     
+    }
+    else {
+      setMode(modeNew);
+    }
   }
 
 
   function back() { 
-    history.pop();
-    setMode(history[history.length-1]);
+    if (history.length > 1) {
+      history.pop();
+      setMode(history[history.length-1]);
+    }
   }
 
   return { mode, transition, back };
 
   
-}
-
-function useCustomHook() {
-  function action() {
-
-  }
-
-  return { action };
-}
+};
