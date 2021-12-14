@@ -8,7 +8,7 @@ export default function useVisualMode (modeInitial) {
   function transition(modeNew, replace = false) { 
     if (!replace) {
       setMode(modeNew);
-      setHistory([...history, mode]);    
+      setHistory([...history, mode]);  
     }
     else {
       setMode(modeNew);
