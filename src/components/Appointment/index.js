@@ -32,14 +32,14 @@ export default function Appointment(props) {
     };
     props.bookInterview(props.id, interview)
     .then(() =>transition(SHOW))
-    .catch(error => transition(ERROR_SAVE, true));
+    .catch(() => transition(ERROR_SAVE, true));
   }  
 
   function remove () {
     transition(DELETING, true);
     props.cancelInterview(props.id)
     .then(() =>transition(EMPTY))
-    .catch(error => transition(ERROR_DELETE, true));
+    .catch(() => transition(ERROR_DELETE, true));
   }
   
   function confirm() {
@@ -48,6 +48,10 @@ export default function Appointment(props) {
 
   function edit() {
     transition(EDITING);
+  }
+
+  function empty (){
+    transition(EMPTY);
   }
    
    return (
@@ -95,7 +99,7 @@ export default function Appointment(props) {
       {mode === ERROR_SAVE && (
         <Error
           message="There was an error saving your appointment"
-          onClose={back}
+          onClose={empty}
         />
       )}
       {mode === ERROR_DELETE && (
