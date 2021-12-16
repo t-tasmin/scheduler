@@ -1,6 +1,8 @@
 # Interview Scheduler
 
-!["Main"](https://github.com/t-tasmin/scheduler/blob/master/docs/appointment.jpg)
+!["Main"](https://github.com/t-tasmin/scheduler/blob/master/docs/scheduler.jpg)
+
+!["Appointment"](https://github.com/t-tasmin/scheduler/blob/master/docs/appointment.jpg)
 
 ## Setup
 
