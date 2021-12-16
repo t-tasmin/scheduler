@@ -4,6 +4,8 @@
 
 !["Appointment"](https://github.com/t-tasmin/scheduler/blob/master/docs/appointment.jpg)
 
+!["Delete"](https://github.com/t-tasmin/scheduler/blob/master/docs/delete.jpg)
+
 ## Setup
 
 Install dependencies with `npm install`.
